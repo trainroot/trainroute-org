@@ -17,11 +17,11 @@
             font-size: 32px;
             font-weight: normal;
             margin-top: 30px;
-            margin-bottom: 50px;
+            margin-bottom: 35px;
         }
         #content {
             font-size: 20px;
-            margin-top: 30px;
+            margin-top: 43px;
         }
         #content p {
             margin: 10px 0;
@@ -39,6 +39,7 @@
         }
         #time {
             font-size: 18px;
+            font-style: italic;
             color: yellow;
             position: fixed;
             top: 10px;
@@ -79,7 +80,7 @@
             let seconds = now.getSeconds();
             let ampm = hours >= 12 ? 'PM' : 'AM';
             hours = hours % 12;
-            hours = hours ? hours : 12;
+            hours = hours ? hours : 12; // 12-hour format
             minutes = minutes < 10 ? '0' + minutes : minutes;
             seconds = seconds < 10 ? '0' + seconds : seconds;
 
