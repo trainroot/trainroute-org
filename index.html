@@ -8,58 +8,70 @@
         body {
             font-family: times, serif;
             color: #fff;
-            background: url('https://i.redd.it/cybmmwc3mbid1.gif') repeat;
+            background: url('https://64.media.tumblr.com/781a67b54e8d09e71842ad09405d3bfb/7b100907ad94189e-a9/s250x400/c89c8aa9839b51541104c262c410932aa98758ff.gifv') repeat;
             margin: 0;
             padding: 0;
-        }
-        #bible {
-            width: 460px;
-            text-align: justify;
-        }
-        .num {
-            display: block;
-            width: 40px;
-            margin: 2px 8px 0 0;
-            float: left;
-            background-color: #fff;
-            color: #000;
-            font-size: 40px;
-            line-height: 40px;
             text-align: center;
-            font-weight: bold;
-        }
-        sup {
-            font-size: 9px;
         }
         h1 {
+            font-family: 'Comic Sans MS', sans-serif;
             font-weight: normal;
-            text-align: center;
+            margin-bottom: 30px; /* Adds spacing below the title */
         }
-        #gif1, #gif2, #gif3 {
-            text-align: center;
-            margin: 20px 0;
+        #content {
+            margin-top: 30px;
+        }
+        #content p {
+            margin: 10px 0;
         }
         a {
             color: #fff;
             text-decoration: underline;
         }
+        img {
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        #time {
+            font-size: 18px;
+            margin-top: 55px;
+            color: lightblue;
+        }
     </style>
 </head>
 <body>
     <h1>✰ trainroute.org ✰</h1>
-    <div id="gif1">
+    <div>
         <img width="300" src="https://web.archive.org/web/20090831180426if_/http://www.geocities.com/mohemed_taha/welcome.gif" alt="Welcome GIF">
     </div>
-    <div id="content" style="text-align: center;">
-        <p>
-            <sup>Introduction </sup>Hello, I am trainroute and this is my site!
-        </p>
-        <p>
-            <sup>Hobbies </sup>Recently, I've really enjoyed coding, art, games, and making things
-        </p>
-        <p>
-            <sup>Socials</sup> <a href="https://open.spotify.com/user/trvnyp4khlepcmlbwsyv49y7w?si=3d9e3ef0a6094c12">Spotify</a> <a href="https://soundcloud.com/d2lta-28742259">SoundCloud</a> <a href="https://github.com/trainroot">GitHub</a>  <a href="https://x.com/trainroot">Twitter</a> <a href="https://www.roblox.com/users/457947584/profile">ROBLOX</a>
-        </p>
+    <div id="content">
+        <p><sup>About me</sup> Hello, I am trainroute and this is my site!</p>
+        <p><sup>Hobbies</sup> Recently, I've really enjoyed coding, art, games, and making things.</p>
+        <p><sup>Social links</sup> <a href="https://open.spotify.com/user/trvnyp4khlepcmlbwsyv49y7w?si=3d9e3ef0a6094c12">Spotify</a> 
+        <a href="https://soundcloud.com/d2lta-28742259">SoundCloud</a> 
+        <a href="https://github.com/trainroot">GitHub</a>  
+        <a href="https://x.com/trainroot">Twitter</a> 
+        <a href="https://www.roblox.com/users/457947584/profile">ROBLOX</a></p>
     </div>
+
+    <div id="time"></div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            let ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // 12-hour format
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+            document.getElementById('time').textContent = timeString;
+        }
+
+        setInterval(updateTime, 1000); // Update the time every second
+    </script>
 </body>
 </html>
