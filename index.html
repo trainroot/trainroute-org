@@ -1,96 +1,212 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <link rel="icon" href="https://github.com/trainroot/trainroute-org/raw/refs/heads/main/noFilter.ico" type="image/x-icon">
-    <style>
-        body {
-            font-family: times, serif;
-            color: #fff;
-            background: url('https://64.media.tumblr.com/781a67b54e8d09e71842ad09405d3bfb/7b100907ad94189e-a9/s250x400/c89c8aa9839b51541104c262c410932aa98758ff.gifv') repeat;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        h1 {
-            font-family: 'Comic Sans MS', sans-serif;
-            font-size: 25px;
-            font-weight: normal;
-            margin-top: 30px;
-            margin-bottom: 25px;
-        }
-        #content {
-            font-size: 20px;
-            margin-top: 50px;
-        }
-        #content p {
-            margin: 10px 0;
-        }
-        a {
-            color: #fff;
-            text-decoration: underline;
-            transition: font-weight 0.3s;
-        }
-        a:hover {
-            font-weight: bold;
-        }
-        img {
-            margin: 10px;
-        }
-        #time {
-            font-size: 18px;
-            font-style: italic;
-            color: yellow;
-            position: fixed;
-            top: 10px;
-            right: 20px;
-            z-index: 100;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ABOUT ME</title>
+  <style>
+    :root {
+      --bg-color: white;
+      --text-color: black;
+      --hover-color: #3A5A40;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    nav {
+      position: absolute;
+      top: 30px;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      padding: 0 10px;
+    }
+
+    nav a {
+      margin: 0 14px;
+      text-decoration: none;
+      color: var(--text-color);
+      position: relative;
+      transition: color 0.3s ease;
+      display: inline-block;
+      padding: 8px 4px;
+    }
+
+    nav a:hover {
+      color: var(--hover-color);
+    }
+
+    nav a[data-index]::after {
+      content: attr(data-index);
+      font-size: 14px;
+      vertical-align: super;
+      margin-left: 2px;
+    }
+
+    .main-image {
+      display: block;
+      max-width: 400px;
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+
+    .footer,
+    .footer-center {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 400;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-size: 16px;
+    }
+
+    .footer-center {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 0 10px;
+    }
+
+    .footer-logo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      cursor: pointer;
+      user-select: none;
+      color: var(--text-color);
+    }
+
+    @media screen and (max-width: 768px) {
+      nav {
+        font-size: 22px;
+      }
+
+      .main-image {
+        margin-top: 40px;
+      }
+
+      .footer,
+      .footer-center,
+      .footer-logo {
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      nav {
+        font-size: 18px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .main-image {
+        margin-top: 40px;
+      }
+
+      .footer,
+      .footer-center,
+      .footer-logo {
+        font-size: 12px;
+      }
+    }
+
+    body.dark-mode {
+      --bg-color: #111;
+      --text-color: #f0f0f0;
+      --hover-color: #9FC088;
+    }
+  </style>
 </head>
 <body>
-    <h1>✰ trainroute.org ✰</h1>
 
-    <div> 
-        <img width="320" src="https://web.archive.org/web/20090831180426if_/http://www.geocities.com/mohemed_taha/welcome.gif" alt="Welcome GIF"> 
-    </div>
-    
-    <div id="gif2">
-        <img width="55" src="https://web.archive.org/web/20091019005055if_/http://cf.geocities.com/elevageshiningstar/star.gif" alt="Star GIF">
-    </div>
+  <nav>
+    <a href="#" data-index="①">HOME</a>
+    <a href="#" data-index="②">ABOUT</a>
+    <a href="#" data-index="③">GALLERY</a>
+    <a href="#" data-index="④">SOCIALS</a>
+  </nav>
 
-    <div id="content">
-        <p><sup>About me</sup> Hello! My name is Sam, also known as trainroute online.</p>
-        <p><sup>Hobbies</sup> I enjoy art, programming, music production, and games!</p>
-        <p><sup>Socials</sup> 
-            <a href="https://open.spotify.com/user/trvnyp4khlepcmlbwsyv49y7w?si=3d9e3ef0a6094c12">Spotify</a> 
-            <a href="https://github.com/trainroot">GitHub</a>  
-            <a href="https://x.com/trainroot">Twitter</a> 
-            <a href="https://www.roblox.com/users/457947584/profile">ROBLOX</a>
-        </p>
-    </div>
+  <img src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="Main Image" class="main-image" />
 
-    <div id="time"></div>
+  <div class="footer" id="clock">00:00:00</div>
+  <div class="footer-center" id="date">LOADING DATE...</div>
+  <div class="footer-logo" onclick="toggleDarkMode()" id="footer-logo">⏾ TRAINROUTE.ORG</div>
 
-    <script>
-        function updateTime() {
-            const now = new Date();
-            let hours = now.getHours();
-            let minutes = now.getMinutes();
-            let seconds = now.getSeconds();
-            let ampm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12;
-            hours = hours ? hours : 12; // 12-hour format
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
+  <script>
+    function updateClock() {
+      const now = new Date();
+      document.getElementById("clock").textContent = now.toLocaleTimeString('en-US', { hour12: false });
+    }
 
-            const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
-            
-            document.getElementById('time').textContent = timeString;
-        }
+    function updateDate() {
+      const now = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const formatted = now.toLocaleDateString('en-US', options).toUpperCase();
+      document.getElementById("date").textContent = formatted;
+    }
 
-        setInterval(updateTime, 1000);
-    </script>
+    function toggleDarkMode() {
+      const body = document.body;
+      const logo = document.getElementById("footer-logo");
+      const isDark = body.classList.toggle("dark-mode");
+
+      localStorage.setItem("darkMode", isDark ? "true" : "false");
+      logo.textContent = isDark ? "☀︎ TRAINROUTE.ORG" : "⏾ TRAINROUTE.ORG";
+    }
+
+    function applySavedMode() {
+      const isDark = localStorage.getItem("darkMode") === "true";
+      const body = document.body;
+      const logo = document.getElementById("footer-logo");
+
+      if (isDark) {
+        body.classList.add("dark-mode");
+        logo.textContent = "☀︎ TRAINROUTE.ORG";
+      } else {
+        body.classList.remove("dark-mode");
+        logo.textContent = "⏾ TRAINROUTE.ORG";
+      }
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+    updateDate();
+    applySavedMode();
+  </script>
 </body>
 </html>
