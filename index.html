@@ -11,7 +11,7 @@
       --hover-color: #FFCA00;
     }
 
-    * {
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -29,24 +29,26 @@
       justify-content: center;
       align-items: center;
       padding: 20px;
+      text-align: center;
     }
 
     nav {
       position: absolute;
       top: 30px;
       width: 100%;
-      text-align: center;
       z-index: 10;
-      font-size: 55px;
+      font-size: 3.2vw;
       font-weight: 400;
       letter-spacing: 0.5px;
       transition: color 0.3s ease;
-      word-wrap: break-word;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
       padding: 0 10px;
     }
 
     nav a {
-      margin: 0 14px;
       text-decoration: none;
       color: var(--text-color);
       position: relative;
@@ -59,16 +61,16 @@
 
     nav a[data-index]::after {
       content: attr(data-index);
-      font-size: 25px;
+      font-size: 0.6em;
       vertical-align: super;
       margin-left: 2px;
     }
 
     .main-image {
       display: block;
-      max-width: 600px;
       width: 90%;
-      margin-top: 0px;
+      max-width: 600px;
+      margin-top: 100px;
       pointer-events: none;
       user-select: none;
       transition: transform 0.3s ease;
@@ -81,74 +83,53 @@
       font-weight: 400;
       position: fixed;
       bottom: 20px;
-      font-size: 30px;
+      font-size: 2.5vw;
       transition: color 0.3s ease;
+      line-height: 1.2;
+      padding: 0 10px;
     }
 
     .footer {
-      left: 20px;
+      left: 10px;
     }
 
     .footer-center {
       width: 100%;
       text-align: center;
-      letter-spacing: 0.5px;
       text-transform: uppercase;
     }
 
     .footer-logo {
-      right: 20px;
+      right: 10px;
       font-weight: 500;
-      font-size: 20px;
+      font-size: 2.3vw;
       letter-spacing: 2px;
       cursor: pointer;
       user-select: none;
     }
 
-    @media screen and (max-width: 768px) {
+    @media (max-width: 600px) {
       nav {
-        font-size: 26px;
+        font-size: 5vw;
       }
 
-      .main-image {
-        margin-top: 100px;
-        max-width: 300px;
+      nav a[data-index]::after {
+        font-size: 0.8em;
       }
 
       .footer,
       .footer-center,
       .footer-logo {
-        font-size: 20px;
+        font-size: 4vw;
       }
-    }
 
-    @media screen and (max-width: 480px) {
-      nav {
-        font-size: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        line-height: 1.2;
+      .footer-logo {
+        font-size: 3.8vw;
       }
 
       .main-image {
-        margin-top: 120px;
+        margin-top: 140px;
         max-width: 250px;
-      }
-
-      .footer,
-      .footer-center,
-      .footer-logo {
-        font-size: 18px;
-      }
-
-      .footer {
-        left: 10px;
-      }
-
-      .footer-logo {
-        right: 10px;
       }
     }
 
@@ -162,10 +143,10 @@
 <body>
 
   <nav>
-    <a href="#" data-index="①">HOME</a>
-    <a href="#" data-index="②">ABOUT</a>
-    <a href="#" data-index="③">GALLERY</a>
-    <a href="#" data-index="④">SOCIALS</a>
+    <a href="index.html" data-index="①">HOME</a>
+    <a href="about.html" data-index="②">ABOUT</a>
+    <a href="gallery.html" data-index="③">GALLERY</a>
+    <a href="socials.html" data-index="④">SOCIALS</a>
   </nav>
 
   <img src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="Main Image" class="main-image" />
@@ -197,14 +178,10 @@
 
     function applySavedMode() {
       const isDark = localStorage.getItem("darkMode") === "true";
-      const body = document.body;
       const logo = document.getElementById("footer-logo");
-
       if (isDark) {
-        body.classList.add("dark-mode");
+        document.body.classList.add("dark-mode");
         logo.textContent = "☀︎ TRAINROUTE.ORG";
-      } else {
-        logo.textContent = "⏾ TRAINROUTE.ORG";
       }
     }
 
