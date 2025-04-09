@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <title>trainroute</title>
   <link rel="icon" href="https://github.com/trainroot/trainroute-org/raw/refs/heads/main/CatIcon.ico" type="image/x-icon">
   <style>
@@ -11,23 +11,24 @@
       --hover-color: #FFCA00;
     }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       background: var(--bg-color);
       color: var(--text-color);
       transition: background 0.3s ease, color 0.3s ease;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
+      overflow-x: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-    }
-
-    * {
-      margin: 20;
-      padding: 0;
-      box-sizing: border-box;
+      padding: 20px;
     }
 
     nav {
@@ -40,6 +41,8 @@
       font-weight: 400;
       letter-spacing: 0.5px;
       transition: color 0.3s ease;
+      word-wrap: break-word;
+      padding: 0 10px;
     }
 
     nav a {
@@ -61,15 +64,15 @@
       margin-left: 2px;
     }
 
-.main-image {
-  display: block;
-  max-width: 600px;
-  width: 90%;
-  margin-top: 0px;
-  pointer-events: none;
-  user-select: none;
-  transition: transform 0.3s ease;
-}
+    .main-image {
+      display: block;
+      max-width: 600px;
+      width: 90%;
+      margin-top: 0px;
+      pointer-events: none;
+      user-select: none;
+      transition: transform 0.3s ease;
+    }
 
     .footer,
     .footer-center,
@@ -79,7 +82,6 @@
       position: fixed;
       bottom: 20px;
       font-size: 30px;
-      margin-bottom: 30px;
       transition: color 0.3s ease;
     }
 
@@ -123,6 +125,11 @@
     @media screen and (max-width: 480px) {
       nav {
         font-size: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        line-height: 1.2;
       }
 
       .main-image {
@@ -133,7 +140,15 @@
       .footer,
       .footer-center,
       .footer-logo {
-      	font-size: 20px;
+        font-size: 18px;
+      }
+
+      .footer {
+        left: 10px;
+      }
+
+      .footer-logo {
+        right: 10px;
       }
     }
 
