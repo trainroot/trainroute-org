@@ -50,9 +50,13 @@
       gap: 20px;
     }
 
+    .header a {
+      display: inline-block;
+    }
+
     .header img {
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       border-radius: 8px;
       transition: transform 0.3s ease;
     }
@@ -63,20 +67,24 @@
 
     nav {
       display: flex;
-      gap: 20px;
-      font-size: 14px;
+      gap: 15px;
+      font-size: 16px;
     }
 
     nav a {
-      color: #ccc;
+      color: #A9A9A9;
       text-decoration: underline;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
     }
 
     nav a:hover {
-      color: white;
+      color: #A9A9A9;
       font-weight: bold;
       transform: scale(1.05);
+    }
+
+    nav a.active {
+      font-weight: bold; /* Make active link bold */
     }
 
     .main-content {
@@ -96,14 +104,12 @@
       border-radius: 50%;
       z-index: 0;
       filter: blur(20px);
-      top: calc(50% - 110px);
-      left: calc(50% - 110px);
       pointer-events: none;
     }
 
     .main-content img {
-      width: 120px;
-      height: 120px;
+      width: 148px;
+      height: 148px;
       border-radius: 15px;
       margin-bottom: 1rem;
       position: relative;
@@ -111,19 +117,19 @@
     }
 
     .main-content h1 {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       font-weight: bold;
       margin-bottom: 0.5rem;
     }
 
     .main-content .desc {
-      font-size: 0.9rem;
+      font-size: 1rem;
       font-weight: bold;
       margin-bottom: 0.4rem;
     }
 
     .main-content .coming {
-      font-size: 0.8rem;
+      font-size: 0.95rem;
       color: #3b3b3b;
       font-style: italic;
     }
@@ -132,7 +138,7 @@
       position: absolute;
       bottom: 10px;
       right: 10px;
-      font-size: 10px;
+      font-size: 13px;
       color: #999;
       font-weight: bold;
     }
@@ -142,11 +148,14 @@
   <div id="home"></div>
   <div class="container">
     <div class="header">
-      <img src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo">
+      <!-- Image wrapped in anchor tag to link to the home page -->
+      <a href="#home">
+        <img src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo">
+      </a>
       <nav>
-        <a href="#home">home</a>
-        <a href="about.html">about</a>
-        <a href="gallery.html">gallery</a>
+        <a href="#home" id="home-link">home</a>
+        <a href="about.html" id="about-link">about</a>
+        <a href="gallery.html" id="gallery-link">gallery</a>
       </nav>
     </div>
 
@@ -162,5 +171,18 @@
   <footer>
     &copy; 2025 trainroute ltd.
   </footer>
+
+  <script>
+    // Get current page URL
+    const currentPage = window.location.pathname;
+
+    // Set the active link
+    const links = document.querySelectorAll('nav a');
+    links.forEach(link => {
+      if (link.href.includes(currentPage)) {
+        link.classList.add('active');
+      }
+    });
+  </script>
 </body>
 </html>
