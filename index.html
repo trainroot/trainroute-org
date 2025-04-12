@@ -177,14 +177,7 @@
     &copy; 2025 trainroute ltd.
   </footer>
 
-  <script defer>
-  const currentPage = window.location.pathname;
-  document.querySelectorAll('nav a').forEach(link => {
-    if (link.href.includes(currentPage)) {
-      link.classList.add('active');
-    }
-  });
-
+<script defer>
   const images = [
     'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/snow.webp',
     'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/mountain.webp',
@@ -194,38 +187,38 @@
     'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/night.webp'
   ];
 
-  let index = Math.floor(Math.random() * images.length);
   const mainImg = document.getElementById('main-image');
   const mirroredImg = document.querySelector('.mirrored-image');
 
-  mainImg.classList.add('fade-in');
-  mirroredImg.classList.add('fade-in');
+  function getRandomImage(currentSrc) {
+    let newImg;
+    do {
+      newImg = images[Math.floor(Math.random() * images.length)];
+    } while (newImg === currentSrc);
+    return newImg;
+  }
 
-  function preloadAndSwapImage(src) {
+  function updateImage() {
+    const newSrc = getRandomImage(mainImg.src);
     const img = new Image();
-    img.src = src;
+    img.src = newSrc;
     img.onload = () => {
-      mainImg.classList.remove('loaded');
-      mirroredImg.classList.remove('loaded');
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          mainImg.src = src;
-          mirroredImg.src = src;
-          mainImg.classList.add('loaded');
-          mirroredImg.classList.add('loaded');
-        });
-      });
+      mainImg.src = newSrc;
+      mirroredImg.src = newSrc;
     };
   }
 
-  function rotateImage() {
-    preloadAndSwapImage(images[index]);
-    index = (index + 1) % images.length;
-  }
+  updateImage();
 
-  rotateImage();
-  setInterval(rotateImage, 10000);
+  mainImg.addEventListener('click', updateImage);
+  mirroredImg.addEventListener('click', updateImage);
+
+  const currentPage = window.location.pathname;
+  document.querySelectorAll('nav a').forEach(link => {
+    if (link.href.includes(currentPage)) {
+      link.classList.add('active');
+    }
+  });
 </script>
 
 </body>
