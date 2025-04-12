@@ -84,7 +84,7 @@
     }
 
     nav a.active {
-      font-weight: bold; /* Make active link bold */
+      font-weight: bold;
     }
 
     .main-content {
@@ -108,8 +108,8 @@
     }
 
     .main-content img {
-      width: 148px;
-      height: 148px;
+      width: 155px;
+      height: 155px;
       border-radius: 15px;
       margin-bottom: 1rem;
       position: relative;
@@ -117,19 +117,19 @@
     }
 
     .main-content h1 {
-      font-size: 1.75rem;
+      font-size: 1.8rem;
       font-weight: bold;
       margin-bottom: 0.5rem;
     }
 
     .main-content .desc {
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: bold;
       margin-bottom: 0.4rem;
     }
 
     .main-content .coming {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: #3b3b3b;
       font-style: italic;
     }
@@ -161,7 +161,7 @@
 
     <div class="main-content">
       <div class="glow"></div>
-      <img src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo" />
+      <img id="main-image" src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo" />
       <h1>trainroute.org</h1>
       <div class="desc">a personal website and portfolio. welcome, and thank you for visiting!</div>
       <div class="coming">more coming to this site soon</div>
@@ -173,18 +173,35 @@
   </footer>
 
   <script>
-    // Get current page URL
-    const currentPage = window.location.pathname;
+  // Set active link based on URL
+  const currentPage = window.location.pathname;
+  document.querySelectorAll('nav a').forEach(link => {
+    if (link.href.includes(currentPage)) {
+      link.classList.add('active');
+    }
+  });
 
-    // Set the active link
-    const links = document.querySelectorAll('nav a');
-    links.forEach(link => {
-      // Compare the current page with the link's href
-      if (link.href.includes(currentPage)) {
-        link.classList.add('active');
-      }
-    });
+  // Image rotation logic
+  const images = [
+    'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/snow.jpeg',
+    'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/mountain.jpeg',
+    'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/canyon.jpeg',
+    'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/trees.jpeg',
+    'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/sky.jpeg',
+    'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/night.jpeg'
+  ];
+
+  let index = Math.floor(Math.random() * images.length);
+  const mainImg = document.getElementById('main-image');
+
+  function rotateImage() {
+    mainImg.src = images[index];
+    index = (index + 1) % images.length;
+  }
+
+  // Start rotation
+  rotateImage(); // Show the first image
+  setInterval(rotateImage, 1000); // Rotate every second
   </script>
 </body>
 </html>
-
