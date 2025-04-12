@@ -49,6 +49,7 @@
       align-items: center;
       gap: 20px;
     }
+    
 
     .header a {
       display: inline-block;
@@ -92,19 +93,21 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       z-index: 1;
       line-height: 1.8;
     }
 
-    .glow {
+    .main-content .mirrored-image {
       position: absolute;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
-      border-radius: 50%;
+      top: 0;
+      left: 0;
+      transform: scaleX(-1);
+      filter: blur(10px);
       z-index: 0;
-      filter: blur(20px);
-      pointer-events: none;
+      width: 176px;
+      height: 176px;
+      margin-left: 11.1rem;
     }
 
     .main-content img {
@@ -148,7 +151,6 @@
   <div id="home"></div>
   <div class="container">
     <div class="header">
-
       <a href="index.html">
         <img src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo">
       </a>
@@ -161,6 +163,7 @@
 
     <div class="main-content">
       <div class="glow"></div>
+      <img class="mirrored-image" src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="mirrored logo" />
       <img id="main-image" src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo" />
       <h1>trainroute.org</h1>
       <div class="desc">a personal website and portfolio. welcome, and thank you for visiting!</div>
@@ -173,33 +176,34 @@
   </footer>
 
   <script>
+    const currentPage = window.location.pathname;
+    document.querySelectorAll('nav a').forEach(link => {
+      if (link.href.includes(currentPage)) {
+        link.classList.add('active');
+      }
+    });
 
-  const currentPage = window.location.pathname;
-  document.querySelectorAll('nav a').forEach(link => {
-    if (link.href.includes(currentPage)) {
-      link.classList.add('active');
+    const images = [
+      'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/snow.jpeg',
+      'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/mountain.jpeg',
+      'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/canyon.jpeg',
+      'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/trees.jpeg',
+      'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/sky.jpeg',
+      'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/night.jpeg'
+    ];
+
+    let index = Math.floor(Math.random() * images.length);
+    const mainImg = document.getElementById('main-image');
+    const mirroredImg = document.querySelector('.mirrored-image');
+
+    function rotateImage() {
+      mainImg.src = images[index];
+      mirroredImg.src = images[index];
+      index = (index + 1) % images.length;
     }
-  });
 
-  const images = [
-    'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/snow.jpeg',
-    'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/mountain.jpeg',
-    'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/canyon.jpeg',
-    'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/trees.jpeg',
-    'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/sky.jpeg',
-    'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/night.jpeg'
-  ];
-
-  let index = Math.floor(Math.random() * images.length);
-  const mainImg = document.getElementById('main-image');
-
-  function rotateImage() {
-    mainImg.src = images[index];
-    index = (index + 1) % images.length;
-  }
-
-  rotateImage();
-  setInterval(rotateImage, 1000);
+    rotateImage();
+    setInterval(rotateImage, 1000);
   </script>
 </body>
 </html>
