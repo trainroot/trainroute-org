@@ -1,1 +1,145 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>trainroute</title>
+  <link rel="icon" href="https://github.com/trainroot/trainroute-org/raw/refs/heads/main/CatIcon.ico" type="image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: Arial, sans-serif;
+      background: black url('https://nicosnextbots.com/bg.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .container {
+      height: 100%;
+      width: 100%;
+      backdrop-filter: blur(5px);
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .header {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header a {
+      display: inline-block;
+    }
+
+    .header img {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .header img:hover {
+      transform: scale(1.2);
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      font-size: 16px;
+    }
+
+    nav a {
+      color: #A9A9A9;
+      text-decoration: underline;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #A9A9A9;
+      font-weight: bold;
+      transform: scale(1.05);
+    }
+
+    nav a.active {
+      font-weight: bold; /* Make active link bold */
+    }
+
+    .coming {
+      font-size: 1.75rem;
+      color: #3b3b3b;
+      font-style: italic;
+      margin-top: 100px;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 13px;
+      color: #999;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="home"></div>
+  <div class="container">
+    <div class="header">
+      <!-- Image wrapped in anchor tag to link to the home page -->
+      <a href="#home">
+        <img src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo">
+      </a>
+      <nav>
+        <a href="#home" id="home-link">home</a>
+        <a href="about.html" id="about-link">about</a>
+        <a href="gallery.html" id="gallery-link">gallery</a>
+      </nav>
+    </div>
+
+    <!-- Coming text centered -->
+    <div class="coming">
+      more coming to this page soon...
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 trainroute ltd.
+  </footer>
+
+  <script>
+    // Get current page URL
+    const currentPage = window.location.pathname;
+
+    // Set the active link
+    const links = document.querySelectorAll('nav a');
+    links.forEach(link => {
+      if (link.href.includes(currentPage)) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
