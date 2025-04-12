@@ -154,7 +154,7 @@
   <div class="container">
     <div class="header">
       <a href="index.html">
-        <img src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo">
+        <img src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" loading="lazy" alt="logo">
       </a>
       <nav>
         <a href="index.html" id="home-link">home</a>
@@ -177,7 +177,7 @@
     &copy; 2025 trainroute ltd.
   </footer>
 
-  <script>
+  <script defer>
   const currentPage = window.location.pathname;
   document.querySelectorAll('nav a').forEach(link => {
     if (link.href.includes(currentPage)) {
@@ -225,7 +225,7 @@
   }
 
   rotateImage();
-  setInterval(rotateImage, 5000);
+  setInterval(rotateImage, 10000);
 </script>
 
 </body>
