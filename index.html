@@ -149,11 +149,11 @@
   <div class="container">
     <div class="header">
       <!-- Image wrapped in anchor tag to link to the home page -->
-      <a href="#home">
+      <a href="index.html">
         <img src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo">
       </a>
       <nav>
-        <a href="#home" id="home-link">home</a>
+        <a href="index.html" id="home-link">home</a>
         <a href="about.html" id="about-link">about</a>
         <a href="gallery.html" id="gallery-link">gallery</a>
       </nav>
@@ -179,6 +179,7 @@
     // Set the active link
     const links = document.querySelectorAll('nav a');
     links.forEach(link => {
+      // Compare the current page with the link's href
       if (link.href.includes(currentPage)) {
         link.classList.add('active');
       }
@@ -186,3 +187,4 @@
   </script>
 </body>
 </html>
+
