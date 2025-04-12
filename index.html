@@ -84,7 +84,7 @@
     }
 
     nav a.active {
-      font-weight: bold; /* Make active link bold */
+      font-weight: bold;
     }
 
     .main-content {
@@ -108,8 +108,8 @@
     }
 
     .main-content img {
-      width: 155px;
-      height: 155px;
+      width: 175px;
+      height: 175px;
       border-radius: 15px;
       margin-bottom: 1rem;
       position: relative;
@@ -148,7 +148,7 @@
   <div id="home"></div>
   <div class="container">
     <div class="header">
-      <!-- Image wrapped in anchor tag to link to the home page -->
+
       <a href="index.html">
         <img src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo">
       </a>
@@ -173,7 +173,7 @@
   </footer>
 
   <script>
-  // Set active link based on URL
+
   const currentPage = window.location.pathname;
   document.querySelectorAll('nav a').forEach(link => {
     if (link.href.includes(currentPage)) {
@@ -181,7 +181,6 @@
     }
   });
 
-  // Image rotation logic
   const images = [
     'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/snow.jpeg',
     'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/mountain.jpeg',
@@ -199,9 +198,8 @@
     index = (index + 1) % images.length;
   }
 
-  // Start rotation
-  rotateImage(); // Show the first image
-  setInterval(rotateImage, 1000); // Rotate every 5 seconds
+  rotateImage();
+  setInterval(rotateImage, 1000);
   </script>
 </body>
 </html>
