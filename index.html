@@ -1,167 +1,166 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>trainroute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nico's nextbots</title>
   <link rel="icon" href="https://github.com/trainroot/trainroute-org/raw/refs/heads/main/CatIcon.ico" type="image/x-icon">
   <style>
-    :root {
-      --bg-color: white;
-      --text-color: black;
-      --hover-color: #FFCA00;
-    }
-
-    html, body {
+    * {
       margin: 0;
       padding: 0;
-      overflow: hidden;
-      height: 100%;
-    }
-
-    *, *::before, *::after {
       box-sizing: border-box;
     }
 
-    body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      transition: background 0.3s ease, color 0.3s ease;
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: Arial, sans-serif;
+      background: black url('https://nicosnextbots.com/bg.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .container {
+      height: 100%;
+      width: 100%;
+      backdrop-filter: blur(5px);
+      background-color: rgba(0, 0, 0, 0.6);
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      padding: 1.5vh 3vw;
-    }
-
-    nav {
-  width: 100%;
-  text-align: center;
-  font-size: clamp(24px, 6vw, 55px);
-  font-weight: 400;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2vw;
-  margin-top: 0vh; /* reduced from default or previous value */
-  margin-bottom: 2vh;
-}
-    nav a {
-      text-decoration: none;
-      color: var(--text-color);
-      transition: color 0.3s ease;
-      position: relative;
-    }
-
-    nav a:hover {
-      color: var(--hover-color);
-    }
-
-    nav a[data-index]::after {
-      content: attr(data-index);
-      font-size: 0.45em;
-      vertical-align: super;
-      margin-left: 2px;
-    }
-
-    .main-image {
-      max-width: 90vw;
-      max-height: 60vh;
-      height: auto;
-      width: auto;
-      object-fit: contain;
-      pointer-events: none;
-      user-select: none;
-      transition: transform 0.3s ease;
-      margin: 2vh 0;
-    }
-
-    .footer,
-    .footer-center,
-    .footer-logo {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: 400;
-      font-size: clamp(14px, 2.5vw, 30px);
-      line-height: 1.2;
-      position: fixed;
-      bottom: 2vh;
-      transition: color 0.3s ease;
-    }
-
-    .footer {
-      left: 3vw;
-    }
-
-    .footer-center {
-      left: 50%;
-      transform: translateX(-50%);
-      text-transform: uppercase;
+      justify-content: center;
       text-align: center;
     }
 
-    .footer-logo {
-      right: 3vw;
-      cursor: pointer;
-      user-select: none;
+    .header {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
-    body.dark-mode {
-      --bg-color: #111;
-      --text-color: #f0f0f0;
-      --hover-color: #FFCA00;
+    .header img {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .header img:hover {
+      transform: scale(1.2);
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: underline;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: white;
+      font-weight: bold;
+      transform: scale(1.05);
+    }
+
+    .main-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+      line-height: 1.8;
+    }
+
+    .glow {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+      filter: blur(20px);
+      top: calc(50% - 110px);
+      left: calc(50% - 110px);
+      pointer-events: none;
+    }
+
+    .main-content img {
+      width: 120px;
+      height: 120px;
+      border-radius: 15px;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .main-content h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .main-content .desc {
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-bottom: 0.4rem;
+    }
+
+    .main-content .coming {
+      font-size: 0.8rem;
+      color: #3b3b3b;
+      font-style: italic;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 10px;
+      color: #999;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+  <div id="home"></div>
+  <div class="container">
+    <div class="header">
+      <img src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo">
+      <nav>
+        <a href="#home">home</a>
+        <a href="about.html">about</a>
+        <a href="gallery.html">gallery</a>
+      </nav>
+    </div>
 
-  <nav>
-    <a href="#" data-index="①">HOME</a>
-    <a href="#" data-index="②">ABOUT</a>
-    <a href="#" data-index="③">GALLERY</a>
-    <a href="#" data-index="④">SOCIALS</a>
-  </nav>
+    <div class="main-content">
+      <div class="glow"></div>
+      <img src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo" />
+      <h1>trainroute.org</h1>
+      <div class="desc">a personal website and portfolio. welcome, and thank you for visiting!</div>
+      <div class="coming">more coming to this site soon</div>
+    </div>
+  </div>
 
-  <img src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="Main Image" class="main-image" />
-
-  <div class="footer" id="clock">00:00:00</div>
-  <div class="footer-center" id="date">LOADING DATE...</div>
-  <div class="footer-logo" onclick="toggleDarkMode()" id="footer-logo">⏾</div>
-
-  <script>
-    function updateClock() {
-      const now = new Date();
-      document.getElementById("clock").textContent = now.toLocaleTimeString('en-US', { hour12: false });
-    }
-
-    function updateDate() {
-      const now = new Date();
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      document.getElementById("date").textContent = now.toLocaleDateString('en-US', options).toUpperCase();
-    }
-
-    function toggleDarkMode() {
-      const body = document.body;
-      const logo = document.getElementById("footer-logo");
-      const isDark = body.classList.toggle("dark-mode");
-      localStorage.setItem("darkMode", isDark ? "true" : "false");
-      logo.textContent = isDark ? "☀︎" : "⏾";
-    }
-
-    function applySavedMode() {
-      const isDark = localStorage.getItem("darkMode") === "true";
-      const logo = document.getElementById("footer-logo");
-      if (isDark) {
-        document.body.classList.add("dark-mode");
-        logo.textContent = "☀︎";
-      } else {
-        logo.textContent = "⏾";
-      }
-    }
-
-    setInterval(updateClock, 1000);
-    updateClock();
-    updateDate();
-    applySavedMode();
-  </script>
+  <footer>
+    &copy; 2025 trainroute ltd.
+  </footer>
 </body>
 </html>
