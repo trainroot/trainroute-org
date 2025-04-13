@@ -78,13 +78,18 @@
       z-index: 0;
     }
 
-    .header .logo-wrapper .main-header {
-      z-index: 1;
-    }
+  .header .logo-wrapper .main-header {
+    z-index: 1;
+    transition: transform 0.3s ease;
+  }
 
-    .header .logo-wrapper .main-header:hover {
-      transform: scale(1.2);
-    }
+  .header .logo-wrapper .main-header:hover {
+    transform: scale(1.1);
+  }
+
+  .header .logo-wrapper .mirrored-header:hover {
+    transform: scale(1);
+  }
 
     nav {
       display: flex;
