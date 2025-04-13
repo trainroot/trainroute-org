@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -47,21 +48,42 @@
       transform: translateX(-50%);
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 20px;
     }
 
     .header a {
       display: inline-block;
+      position: relative;
     }
 
-    .header img {
+    .header .logo-wrapper {
+      position: relative;
       width: 50px;
       height: 50px;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
     }
 
-    .header img:hover {
+    .header .logo-wrapper img {
+      width: 50px;
+      height: 50px;
+      border-radius: 15%;
+      transition: transform 0.3s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .header .logo-wrapper .mirrored-header {
+      transform: scaleX(-1);
+      filter: blur(8px);
+      z-index: 0;
+    }
+
+    .header .logo-wrapper .main-header {
+      z-index: 1;
+    }
+
+    .header .logo-wrapper .main-header:hover {
       transform: scale(1.2);
     }
 
@@ -109,9 +131,11 @@
   <div id="home"></div>
   <div class="container">
     <div class="header">
-      <!-- Image wrapped in anchor tag to link to the home page -->
       <a href="index.html">
-        <img src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo">
+        <div class="logo-wrapper">
+          <img class="mirrored-header" src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="mirrored logo">
+          <img class="main-header" src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo">
+        </div>
       </a>
       <nav>
         <a href="index.html" id="home-link">home</a>
@@ -137,7 +161,6 @@
     // Set the active link
     const links = document.querySelectorAll('nav a');
     links.forEach(link => {
-      // Compare the current page with the link's href
       if (currentPage.includes(link.getAttribute('href'))) {
         link.classList.add('active');
       }
@@ -145,3 +168,4 @@
   </script>
 </body>
 </html>
+
