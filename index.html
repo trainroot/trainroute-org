@@ -229,9 +229,6 @@
 
     updateImage();
 
-    mainImg.addEventListener('click', updateImage);
-    mirroredImg.addEventListener('click', updateImage);
-
     const currentPage = window.location.pathname;
     document.querySelectorAll('nav a').forEach(link => {
       if (link.href.includes(currentPage)) {
