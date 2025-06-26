@@ -1,1 +1,246 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>trainroute</title>
+  <link rel="icon" href="https://github.com/trainroot/trainroute-org/raw/refs/heads/main/CatIcon.ico" type="image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: Arial, sans-serif;
+      background: black url('https://nicosnextbots.com/bg.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .container {
+      height: 100%;
+      width: 100%;
+      backdrop-filter: blur(5px);
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .header {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header a {
+      display: inline-block;
+      position: relative;
+    }
+
+    .header .logo-wrapper {
+      position: relative;
+      width: 50px;
+      height: 50px;
+    }
+
+    .header .logo-wrapper img {
+      width: 50px;
+      height: 50px;
+      border-radius: 15%;
+      transition: transform 0.3s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .header .logo-wrapper .mirrored-header {
+      transform: scaleX(-1);
+      filter: blur(8px);
+      z-index: 0;
+    }
+
+  .header .logo-wrapper .main-header {
+    z-index: 1;
+    transition: transform 0.3s ease;
+  }
+
+  .header .logo-wrapper .main-header:hover {
+    transform: scale(1.1);
+  }
+
+  .header .logo-wrapper .mirrored-header:hover {
+    transform: scale(1);
+  }
+    
+    nav {
+      display: flex;
+      gap: 15px;
+      font-size: 16px;
+    }
+
+  nav a {
+    color: #A9A9A9;
+    text-decoration: underline;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  nav a:hover {
+    color: white;
+    transform: scale(1.05);
+  }
+
+
+    nav a.active {
+      font-weight: bold;
+    }
+
+    .main-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      line-height: 1.8;
+    }
+
+    .main-content .mirrored-image {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%) scaleX(-1);
+      filter: blur(15px);
+      z-index: 0;
+      width: 175px;
+      height: 175px;
+    }
+
+    .main-content img {
+      width: 175px;
+      height: 175px;
+      border-radius: 15%;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .main-content h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .main-content .desc {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+
+    .main-content .coming {
+      font-size: 0.98rem;
+      color: #3b3b3b;
+      font-style: italic;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 13px;
+      color: #999;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="home"></div>
+  <div class="container">
+    <div class="header">
+      <a href="index.html">
+        <div class="logo-wrapper">
+          <img class="mirrored-header" src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="mirrored logo">
+          <img class="main-header" src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo">
+        </div>
+      </a>
+      <nav>
+        <a href="index.html" id="home-link">home</a>
+        <a href="about.html" id="about-link">about</a>
+        <a href="gallery.html" id="gallery-link">gallery</a>
+      </nav>
+    </div>
+
+    <div class="main-content">
+      <img class="mirrored-image" src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="mirrored logo" />
+      <img id="main-image" src="https://mungothomson.com/wp-content/uploads/2018/01/img_silentfilmintree-001.jpg" alt="logo" />
+      <h1>trainroute.org</h1>
+      <div class="desc">a personal website and portfolio. welcome, and thank you for visiting!</div>
+      <div class="coming">more coming to this site soon</div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 trainroute ltd.
+  </footer>
+
+  <script defer>
+    const images = [
+      'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/snow.webp',
+      'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/mountain.webp',
+      'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/canyon.webp',
+      'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/trees.webp',
+      'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/sky.webp',
+      'https://raw.githubusercontent.com/trainroot/trainroute-org/main/images/night.webp'
+    ];
+
+    const mainImg = document.getElementById('main-image');
+    const mirroredImg = document.querySelector('.mirrored-image');
+
+    function getRandomImage(currentSrc) {
+      let newImg;
+      do {
+        newImg = images[Math.floor(Math.random() * images.length)];
+      } while (newImg === currentSrc);
+      return newImg;
+    }
+
+    function updateImage() {
+      const newSrc = getRandomImage(mainImg.src);
+      const img = new Image();
+      img.src = newSrc;
+      img.onload = () => {
+        mainImg.src = newSrc;
+        mirroredImg.src = newSrc;
+      };
+    }
+
+    updateImage();
+
+    const currentPage = window.location.pathname;
+    document.querySelectorAll('nav a').forEach(link => {
+      if (link.href.includes(currentPage)) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
 
