@@ -1,3 +1,3 @@
 # trainroute-org
 
-this is my website, idek what im doing ngl
+a simple website with a mix of html and javascript. beginner project.
