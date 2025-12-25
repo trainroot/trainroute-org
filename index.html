@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,9 +9,16 @@
 html, body {
   margin: 0;
   padding: 20px;
+  min-height: 100vh;
   font-family: "MS PGothic", monospace;
   background: #fafafa;
   color: #000000;
+}
+
+html.dark,
+html.dark body {
+  background: #0A0A0A;
+  color: #FAFAFA;
 }
 
 h1, h2 {
@@ -18,14 +26,9 @@ h1, h2 {
   font-family: monospace;
 }
 
-p {
-  font-size: 1.2em
+p, li {
+  font-size: 1.2em;
 }
-
-li {
-  font-size: 1.2em
-}
-
 
 a {
   color: inherit;
@@ -36,11 +39,6 @@ a {
 
 a:hover {
   transform: scale(1.05);
-}
-
-.dark {
-  background: #0A0A0A;
-  color: #FAFAFA;
 }
 
 hr {
@@ -84,7 +82,7 @@ personal site / link hub | last updated: Dec 2025
 
 <h2 id="about"><span style="color:#e82525;">①</span> about</h2>
 <p>
-hey! my name is trainroute or trainroot, depending on where you find me online. i largely enjoy creating things like: music, drawings, painting, and indulging in general workshop projects (in addition to the classic hobbies of reading, watching movies, and playing video games of course). this site will serve as a home for my social links and might grow in terms of visuals once i learn how to actually whats in my head with html...
+hey! my name is trainroute or trainroot, depending on where you find me online. i largely enjoy creating things like: music, drawings, painting, and indulging in general workshop projects (in addition to the classic hobbies of reading, watching movies, and playing video games of course).
 </p>
 
 <h2 id="links"><span style="color:#2daa57;">②</span> links</h2>
@@ -110,9 +108,10 @@ hey! my name is trainroute or trainroot, depending on where you find me online. 
 
 <script>
 function toggle() {
-  document.body.classList.toggle('dark');
+  document.documentElement.classList.toggle('dark');
 }
 </script>
 
 </body>
 </html>
+
