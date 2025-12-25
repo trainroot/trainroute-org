@@ -10,13 +10,13 @@ html, body {
   padding: 20px;
   min-height: 100vh;
   font-family: "MS PGothic", monospace;
-  background: #FAFAFA;
-  color: #000000;
+  background: #0A0A0A; /* dark default */
+  color: #FAFAFA;      /* light text */
 }
 
-html.dark,
-html.dark body {
-  background: #0A0A0A;
+html.light,
+html.light body {
+  background: #FAFAFA; /* optional light mode */
   color: #000000;
 }
 
@@ -107,7 +107,7 @@ hey! my name is trainroute or trainroot, depending on where you find me online. 
 
 <script>
 function toggle() {
-  document.documentElement.classList.toggle('dark');
+  document.documentElement.classList.toggle('light');
 }
 </script>
 
