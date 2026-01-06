@@ -84,16 +84,19 @@ ul.interests ul li::before {
 }
 
 footer {
-  margin-top: 60px;
-  font-size: 0.8em;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
 }
 
 .toggle {
   cursor: pointer;
   user-select: none;
+  font-family: monospace;
+  font-size: 0.8em;
 }
+
 </style>
 </head>
 
@@ -142,7 +145,7 @@ it isn’t meant to be exhaustive and is subject to change as my priorities shif
 <hr>
 
 <footer>
-  <span>© 2025 trainroute</span>
+  <span class="copyright">© 2025 trainroute</span>
   <span class="toggle" onclick="toggle()" title="toggle dark/light">◑</span>
 </footer>
 
