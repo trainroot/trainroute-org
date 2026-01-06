@@ -40,6 +40,9 @@ hr {
   border: none;
   border-top: 2px dotted currentColor;
   margin: 20px 0;
+  width: calc(100% + 40px);
+  margin-left: -20px;
+}
 
 ul.interests {
   list-style: none;
@@ -96,7 +99,6 @@ footer {
   font-family: monospace;
   font-size: 0.8em;
 }
-
 </style>
 </head>
 
@@ -110,7 +112,7 @@ footer {
 
 <p>
 this page is a snapshot of what i’m currently focused on or interested in.
-it isn’t meant to be exhaustive and is subject to change as my priorities shift (not like anyone will ever read ts 💔✌️).
+it isn’t meant to be exhaustive and is subject to change as my priorities shift.
 </p>
 
 <hr>
@@ -127,25 +129,27 @@ it isn’t meant to be exhaustive and is subject to change as my priorities shif
 
   <li>music + sound
     <ul>
-      <li>indie / alternative rock (susquatch, quannnic, computer)</li>
-      <li>hip-hop (basic ppl everyone knows)</li>
-      <li>soundtrack / ost mixes (katamari damacy, anamanaguchi songs, final fantasy)</li>
+      <li>indie / alternative rock</li>
+      <li>hip-hop</li>
+      <li>soundtrack / ost mixes</li>
     </ul>
   </li>
 
   <li>other
     <ul>
-      <li>literature (sci-fi & nonfiction mostly)</li>
-      <li>history (general world history + random trivia facts)</li>
+      <li>literature (sci-fi & nonfiction)</li>
+      <li>history</li>
       <li>cinematography</li>
       <li>video editing</li>
     </ul>
   </li>
+</ul>
 
 <hr>
 
 <footer>
   <span class="copyright">© 2025 trainroute</span>
+  <span class="toggle" onclick="toggle()" title="toggle dark/light">◑</span>
 </footer>
 
 <script>
@@ -156,3 +160,4 @@ function toggle() {
 
 </body>
 </html>
+
