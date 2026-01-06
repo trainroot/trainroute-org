@@ -1,0 +1,156 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>interests</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+html, body {
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  font-family: "MS PGothic", monospace;
+  background: #0A0A0A;
+  color: #FAFAFA;
+}
+
+html.light,
+html.light body {
+  background: #FAFAFA;
+  color: #000000;
+}
+
+h1 {
+  font-family: monospace;
+  font-size: 2em;
+  margin-bottom: 0.2em;
+}
+
+p {
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  border-top: 2px dotted currentColor;
+  margin: 20px 0;
+
+ul.interests {
+  list-style: none;
+  padding-left: 0;
+  max-width: 700px;
+}
+
+ul.interests > li {
+  position: relative;
+  padding-left: 1.2em;
+  margin-bottom: 0.9em;
+}
+
+ul.interests > li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+}
+
+ul.interests ul {
+  list-style: none;
+  padding-left: 1.6em;
+  margin-top: 0.4em;
+}
+
+ul.interests ul li {
+  position: relative;
+  padding-left: 1.2em;
+  margin-bottom: 0.3em;
+  font-size: 0.95em;
+}
+
+ul.interests ul li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+}
+
+.nav {
+  font-size: 0.9em;
+  margin-bottom: 30px;
+}
+
+footer {
+  margin-top: 60px;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggle {
+  cursor: pointer;
+  user-select: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+  <a href="index.html">← back</a>
+</div>
+
+<h1>interests</h1>
+
+<p>
+this page is a snapshot of what i’m currently focused on or interested in.
+it isn’t meant to be exhaustive and is subject to change as my priorities shift (not like anyone will ever read ts 💔✌️).
+</p>
+
+<hr>
+
+<ul class="interests">
+  <li>video games
+    <ul>
+      <li>valve / source titles (half-life, portal, tf2)</li>
+      <li>tactical fps (counter-strike, call of duty)</li>
+      <li>narrative-driven indie games (undertale / deltarune)</li>
+      <li>sandbox games (minecraft, garrys mod)</li>
+    </ul>
+  </li>
+
+  <li>music + sound
+    <ul>
+      <li>indie / alternative rock (susquatch, quannnic, computer)</li>
+      <li>hip-hop (basic ppl everyone knows)</li>
+      <li>soundtrack / ost mixes (katamari damacy, anamanaguchi songs, final fantasy)</li>
+    </ul>
+  </li>
+
+  <li>other
+    <ul>
+      <li>literature (sci-fi & nonfiction mostly)</li>
+      <li>history (general world history + random trivia facts)</li>
+      <li>cinematography</li>
+      <li>video editing</li>
+    </ul>
+  </li>
+
+<hr>
+
+<footer>
+  <span>© 2025 trainroute</span>
+  <span class="toggle" onclick="toggle()" title="toggle dark/light">◑</span>
+</footer>
+
+<script>
+function toggle() {
+  document.documentElement.classList.toggle('light');
+}
+</script>
+
+</body>
+</html>
